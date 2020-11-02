@@ -10,7 +10,6 @@ import pathlib
 photo_id = -1
 
 def calculate_photo_id(path):
-    fls = list()
     res = 0
     for filename in os.listdir(path):
         if filename.endswith(".jpg") or filename.endswith(".png"):
@@ -49,7 +48,7 @@ def resize_image(input_image_path, output_image_path, file_name):
         photo_id = calculate_photo_id(output_image_path)
     original_image = Image.open(input_image_path + '/' + file_name)
     width, height = original_image.size
-    size = (max(width, height), max(width, height));
+    size = (max(width, height), max(width, height))
     print('The original image size is {wide} wide x {high} '
           'high'.format(wide=width, high=height))
     blured_size = (min(width, height), min(width, height))
